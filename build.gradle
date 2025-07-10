@@ -28,8 +28,6 @@ plugins {
 
 apply plugin: 'io.spring.dependency-management'
 apply plugin: 'eclipse'
-// apply plugin: 'com.github.node-gradle.node' 제거됨
-// apply plugin: 'com.ewerk.gradle.plugins.querydsl' IntelliJ 사용자이므로 유지 X
 
 repositories {
     mavenCentral()
@@ -47,25 +45,6 @@ sourceCompatibility = '1.8'
 configurations {
     providedRuntime
 }
-
-// 👇 Node 관련 작업 제거됨
-/*
-node {
-    download = true
-    version = '14.17.0'
-    nodeModulesDir = file("${project.projectDir}/../frontend")
-}
-
-task npmInstall(type: NpmTask, overwrite: true) {
-    args = ['install']
-}
-
-task webpack(type: NpmTask, dependsOn: 'npmInstall') {
-    args = ['run','build']
-}
-
-processResources.dependsOn 'webpack'
-*/
 
 def buildTime() {
     def date = new Date()
@@ -178,4 +157,14 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+// JAR 설정 (중요!)
+jar {
+    enabled = false
+}
+
+bootJar {
+    enabled = true
+    archiveFileName = "${project.name}-${project.version}.jar"
 }
