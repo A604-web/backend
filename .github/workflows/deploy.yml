@@ -7,7 +7,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: a604-web/backend/webrtc
+  IMAGE_NAME: ${{ github.actor }}/a604-web/backend/webrtc
 
 jobs:
   build-and-deploy:
