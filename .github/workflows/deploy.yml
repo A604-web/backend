@@ -104,7 +104,6 @@ jobs:
             docker login ${{ env.REGISTRY }} -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
             docker pull ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
             
-            # Docker Compose 실행
             docker rmi $(docker images -q)
             docker-compose pull
             docker-compose down || true
