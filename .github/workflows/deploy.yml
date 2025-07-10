@@ -64,10 +64,10 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
         with:
-          context: ./safeRent
-          file: ./safeRent/Dockerfile
+          context: .
+          file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/safe-rent:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/webrtc:latest
 
       - name: 🚀 Deploy to EC2
         uses: appleboy/ssh-action@v1.0.0
