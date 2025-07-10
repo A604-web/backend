@@ -56,12 +56,10 @@ jobs:
 
       - name: 🔧 Make gradlew executable
         run: |
-          cd java-app
           chmod +x ./gradlew
 
       - name: 🔨 Build application
         run: |
-          cd java-app
           ./gradlew clean build -x test
 
       - name: 🏷️ Generate image tags
