@@ -3,20 +3,7 @@ name: Deploy Java Application
 on:
   push:
     branches: [ main, develop ]
-    paths:
-      - 'java-app/**'
-      - '.github/workflows/deploy.yml'
-
   workflow_dispatch:
-    inputs:
-      environment:
-        description: 'Deployment environment'
-        required: true
-        default: 'staging'
-        type: choice
-        options:
-          - staging
-          - production
 
 env:
   REGISTRY: ghcr.io
