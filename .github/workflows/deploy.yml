@@ -44,6 +44,12 @@ jobs:
       - name: 🔧 Make gradlew executable
         run: |
           chmod +x ./gradlew
+          # QueryDSL 생성 파일들 완전 정리
+          rm -rf build/generated
+          rm -rf src/main/generated
+          # Gradle 캐시도 정리
+          rm -rf .gradle/caches/transforms*
+          rm -rf .gradle/caches/*/generated-gradle-jars
 
       - name: 🔨 Build application
         run: |
