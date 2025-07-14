@@ -15,7 +15,6 @@
 | Java    | 17.0.x  | Open JDK LTS |
 | Gradle  | 6.9.3   | Build Tool   |
 | MySQL   | 8.0.x   |              |
-|         |         |              |
 
 <!-- 필수 항목 -->
 
@@ -133,12 +132,6 @@ Windows 기준 개발 환경 구성 설명
     │                   ├── UserRepository.java
     │                   └── UserRepositorySupport.java
     └── resources
-        ├── README.md
         ├── application.properties /* 웹 리소스(서버 host/port, 디비 host/port/계정/패스워드) 관련 설정 정의 */
-        ├── babel.config.js
-        ├── dist
-        ├── package-lock.json
-        ├── package.json
-        ├── public
 ```
 
